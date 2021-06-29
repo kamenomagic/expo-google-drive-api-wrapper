@@ -1,4 +1,8 @@
-﻿Fork of the [react-native-google-drive-api-wrapper](https://github.com/RobinBobin/react-native-google-drive-api-wrapper) project, removed react-native-fs and added the [expo-file-system](https://docs.expo.io/versions/latest/sdk/filesystem/)
+﻿Fork of the fork; this packages is available on npm: https://www.npmjs.com/package/expo-google-drive-api-wrapper#https://developers.google.com/drive/v3/reference/files/export which links to the github page github.com/marcosmessias/expo-google-drive-api-wrapper which no longer exists (otherwise I would have forked it there). The repository is under MIT license so I decided to copy over the project and add my changes here.
+
+---
+
+Fork of the [react-native-google-drive-api-wrapper](https://github.com/RobinBobin/react-native-google-drive-api-wrapper) project, removed react-native-fs and added the [expo-file-system](https://docs.expo.io/versions/latest/sdk/filesystem/)
 
 This wrapper facilitates the use of the [google drive api](https://developers.google.com/drive/v3/reference/).
 
