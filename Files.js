@@ -87,6 +87,18 @@ export default class Files {
     });
   }
 
+  async createFolder(metadata) {
+    metadata.mimeType = Files.mimeFolder;
+
+    const body = JSON.stringify(metadata);
+
+    return fetch(GDrive._urlFiles, {
+      method: "POST",
+      headers: GDrive._createHeaders(GDrive._contentTypeJson, body.length),
+      body,
+    });
+  }
+
   async safeCreateFolder(metadata) {
     let id = await this.getId(
       metadata.name,
@@ -95,15 +107,7 @@ export default class Files {
     );
 
     if (!id) {
-      metadata.mimeType = Files.mimeFolder;
-
-      const body = JSON.stringify(metadata);
-
-      result = await fetch(GDrive._urlFiles, {
-        method: "POST",
-        headers: GDrive._createHeaders(GDrive._contentTypeJson, body.length),
-        body,
-      });
+      result = await this.createFolder(metadata)
 
       if (!result.ok) {
         throw result;
